@@ -21,25 +21,54 @@ function createCard(cardData, revealYear = false) {
   return card;
 }
 
+let scrollInterval = null;
+
 function animateTimelineHover(x) {
-  const timelineDiv = document.getElementById('timeline');
-  const children = Array.from(timelineDiv.children);
+  const wrapper = document.getElementById('timeline-wrapper');
+  const children = Array.from(wrapper.children);
   let shiftIndex = children.findIndex(child => x < child.getBoundingClientRect().left + child.offsetWidth / 2);
   if (shiftIndex === -1) shiftIndex = children.length;
 
   children.forEach((child, index) => {
-    const offset = index >= shiftIndex ? 60 : 0;
-    child.style.transform = `translateX(${offset}px)`;
+    const offset = index >= shiftIndex ? 100 : 0;
+    child.style.transform = `translateX(${offset}%)`;
     child.style.transition = 'transform 0.4s ease';
   });
+
+  const timelineDiv = document.getElementById('timeline');
+  const rect = timelineDiv.getBoundingClientRect();
+  const scrollMargin = 100;
+  const scrollSpeed = 10;
+
+  if (scrollInterval) {
+    cancelAnimationFrame(scrollInterval);
+    scrollInterval = null;
+  }
+
+  function autoScroll() {
+    const newRect = timelineDiv.getBoundingClientRect();
+    if (x > newRect.right - scrollMargin) {
+      timelineDiv.scrollLeft += scrollSpeed;
+      scrollInterval = requestAnimationFrame(autoScroll);
+    } else if (x < newRect.left + scrollMargin) {
+      timelineDiv.scrollLeft -= scrollSpeed;
+      scrollInterval = requestAnimationFrame(autoScroll);
+    }
+  }
+
+  scrollInterval = requestAnimationFrame(autoScroll);
 }
 
 function clearTimelineAnimations() {
-  const timelineDiv = document.getElementById('timeline');
-  const children = Array.from(timelineDiv.children);
+  const wrapper = document.getElementById('timeline-wrapper');
+  const children = Array.from(wrapper.children);
   children.forEach(child => {
     child.style.transform = 'translateX(0)';
   });
+  if (scrollInterval) {
+    cancelAnimationFrame(scrollInterval);
+    scrollInterval = null;
+  }
 }
 
 function showCard() {
@@ -49,17 +78,16 @@ function showCard() {
   const cardData = cardsData.splice(index, 1)[0];
   const card = createCard(cardData);
 
-  card.style.position = 'absolute';
+  card.style.position = 'fixed';
   card.style.left = 'calc(50% - 100px)';
-  card.style.top = '400px';
-
-  let offsetX = 0;
-  let offsetY = 0;
+  card.style.top = '50%';
+  card.style.zIndex = '1000';
 
   const move = (event) => {
     const x = event.clientX;
-    card.style.left = `${x - offsetX}px`;
-    card.style.top = `${event.clientY - offsetY}px`;
+    const y = event.clientY;
+    card.style.left = `${x - card.offsetWidth / 2}px`;
+    card.style.top = `${y - card.offsetHeight}px`;
     animateTimelineHover(x);
   };
 
@@ -69,25 +97,24 @@ function showCard() {
     clearTimelineAnimations();
 
     const timelineDiv = document.getElementById('timeline');
+    const wrapper = document.getElementById('timeline-wrapper');
     const rect = timelineDiv.getBoundingClientRect();
     if (
       event.clientX > rect.left && event.clientX < rect.right &&
       event.clientY > rect.top && event.clientY < rect.bottom
     ) {
       const x = event.clientX;
-      const children = Array.from(timelineDiv.children);
+      const children = Array.from(wrapper.children);
       let guessIndex = children.findIndex(child => x < child.getBoundingClientRect().left + child.offsetWidth / 2);
       if (guessIndex === -1) guessIndex = children.length;
       insertIntoTimeline(cardData, card, guessIndex);
     } else {
       card.style.left = 'calc(50% - 100px)';
-      card.style.top = '400px';
+      card.style.top = '50%';
     }
   };
 
   card.addEventListener('mousedown', e => {
-    offsetX = e.offsetX;
-    offsetY = e.offsetY;
     document.addEventListener('mousemove', move);
     document.addEventListener('mouseup', up);
   });
@@ -98,6 +125,7 @@ function showCard() {
 
 function insertIntoTimeline(cardData, cardEl, guessIndex) {
   const timelineDiv = document.getElementById('timeline');
+  const wrapper = document.getElementById('timeline-wrapper');
   const correctIndex = timeline.findIndex(c => c.year > cardData.year);
   const indexToInsert = correctIndex === -1 ? timeline.length : correctIndex;
 
@@ -115,12 +143,20 @@ function insertIntoTimeline(cardData, cardEl, guessIndex) {
 
   const newCardEl = createCard(cardData, true);
   newCardEl.style.position = 'static';
-  const cardNodes = Array.from(timelineDiv.children);
+  const cardNodes = Array.from(wrapper.children);
   if (indexToInsert >= cardNodes.length) {
-    timelineDiv.appendChild(newCardEl);
+    wrapper.appendChild(newCardEl);
   } else {
-    timelineDiv.insertBefore(newCardEl, cardNodes[indexToInsert]);
+    wrapper.insertBefore(newCardEl, cardNodes[indexToInsert]);
   }
+
+  // Scroll timeline to make the inserted card visible, with overscroll
+  requestAnimationFrame(() => {
+    const cardOffset = newCardEl.offsetLeft;
+    const overscrollPadding = 150;
+    const scrollTarget = Math.max(0, cardOffset - overscrollPadding);
+    timelineDiv.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+  });
 
   cardEl.remove();
   currentCard = null;
@@ -134,7 +170,9 @@ function setupTimeline() {
   timeline.push(starter);
   const starterCard = createCard(starter, true);
   starterCard.style.position = 'static';
-  document.getElementById('timeline').appendChild(starterCard);
+
+  const wrapper = document.getElementById('timeline-wrapper');
+  wrapper.appendChild(starterCard);
   showCard();
 }
 
@@ -144,6 +182,34 @@ setupTimeline();
 // Make timeline scrollable
 const timelineDiv = document.getElementById('timeline');
 timelineDiv.style.overflowX = 'auto';
+timelineDiv.style.overflowY = 'hidden';
 timelineDiv.style.whiteSpace = 'nowrap';
 timelineDiv.style.display = 'flex';
-timelineDiv.style.alignItems = 'center';
+timelineDiv.style.width = '100%';
+timelineDiv.style.scrollBehavior = 'smooth';
+timelineDiv.style.position = 'relative';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.createElement('div');
+  wrapper.id = 'timeline-wrapper';
+  wrapper.style.display = 'flex';
+  wrapper.style.flexWrap = 'nowrap';
+  wrapper.style.gap = '10px';
+  wrapper.style.padding = '0 1000px';
+  wrapper.style.minWidth = 'max-content';
+  timelineDiv.appendChild(wrapper);
+
+  const uiBar = document.getElementById('ui-bar');
+  uiBar.style.position = 'fixed';
+  uiBar.style.top = '0';
+  uiBar.style.left = '0';
+  uiBar.style.width = '100%';
+  uiBar.style.zIndex = '1001';
+
+  const cardZone = document.getElementById('card-zone');
+  cardZone.style.position = 'fixed';
+  cardZone.style.top = '100px';
+  cardZone.style.left = '0';
+  cardZone.style.width = '100%';
+  cardZone.style.zIndex = '1000';
+});

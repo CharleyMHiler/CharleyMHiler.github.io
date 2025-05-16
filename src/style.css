@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f0f0f0;
+  overflow-y: hidden;
 }
 
 #game {
@@ -14,17 +15,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   border: 2px dashed #aaa;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
   min-height: 200px;
   background: white;
+
+  overflow-x: scroll;
+  white-space: nowrap;
+  min-width: max-content;
+}
+#timeline-wrapper {
+  display: inline-flex;
+  min-width: max-content;
 }
 
 .card {
-  width: 200px;
-  height: 300px;
+  width: 15vw;
+  height: 30vh;
+  min-width: 10vw;
+  min-height: 30bh;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -37,6 +49,7 @@ body {
   left: calc(50% - 100px);
   top: 400px;
   user-select: none;
+  white-space: pre-wrap;
 }
 
 .card .header {
@@ -74,5 +87,5 @@ body {
 
 #card-zone {
   position: relative;
-  height: 350px;
+  height: 40vh;
 }
