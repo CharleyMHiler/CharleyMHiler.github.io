@@ -12,7 +12,9 @@ function createCard(cardData, revealYear = false) {
 
   card.innerHTML = `
     <div class="header">${cardData.header}</div>
-    <div class="image" style="background-image: url('${cardData.image}')"></div>
+    <div class="image">
+        <image src="${cardData.image}" alt=${cardData.attribution}>
+    </div>
     <div class="description">${cardData.description}</div>
     <div class="footer">${revealYear ? cardData.year : '????'}</div>
   `;

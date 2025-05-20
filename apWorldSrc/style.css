@@ -64,14 +64,26 @@ body {
 
 .card .image {
   height: 50%;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .image img {
+  width: 100%;                /* Fill container width */
+  height: 100%;               /* Fill container height */
+  object-fit: contain;        /* Scale down to fit without cropping */
+  object-position: top center; /* Align image to top */
+  display: block;
+  position: absolute;
+  top: -8%;
 }
 
 .card .description {
   height: 20%;
   padding: 5px;
   font-size: 0.9em;
+  background: #1B2A41;
 }
 
 .card .footer {
