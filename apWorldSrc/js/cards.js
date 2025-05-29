@@ -131,5 +131,110 @@ const cardsData = [
     attribution: "See page for author, Public domain, via Wikimedia Commons",
     description: "Spread by fleas, killing millions, especially in urban areas.", 
     year: 1347
+  },
+  {
+    header: "American Revolution (start)",
+    image: "",
+    attribution: "",
+    description: "One of the global revolutions, based off enlightenment thought.",
+    year: 1776,
+  },
+  {
+    header: "French Revolution (start)",
+    image: "",
+    attribution: "",
+    description: "One of the global revolutions, only one in Europe. Changed their country rather than making a new one.", 
+    year:1789
+  },
+  {
+    header: "Latin American Revolutions (start)",
+    image: "",
+    attribution: "",
+    description: "Lead by Simon Bolivar, revolutions against Spanish control in Latin America first state.",
+    year: 1808
+  },
+  {
+    header: "Touissant Loverture (Birth)",
+    image: "",
+    attribution: "",
+    description: "Leader of the Haitain Revolutions, for freedom from slavery and the creation of the Haitian state.",
+    year: 1743
+  },
+  {
+    header: "Scientific Revolution (Start)",
+    image: "",
+    attribution: "",
+    description: "Conflicting the dogma of the church, the use of scientific reasoning was used to better understand the universe.",
+    year: 1543
+  },
+  {
+    header: "Constantinople Falls",
+    image: "",
+    attribution: "",
+    description: "Capital of the Byzantine Empire falls by invasions of the Ottoman Turks.",
+    year: 1453
+  },
+  {
+    header: "Fall of Baghdad",
+    image: "",
+    attribution: "",
+    description: "Baghdad, capital of the Abassid Caliphate falls due to Mongol invasion. This is the end of the Abbasid Caliphate. ",
+    year: 1258
+  },
+  {
+    header: "Ghengis Khan (death)",
+    image: "",
+    attribution: "",
+    description: "Unifier and Militarizer of Mongolia, preparing the stepping stones of the great military empire/",
+    year: 1228
+  },
+  {
+    header: "Hajj of Mansa Musa",
+    image: "",
+    attribution: "",
+    description: "Mansa Musa took part on the Hajj, a pillar of Islam, donating a vast quantity of wealth along the way.",
+    year: 1324
+  },
+  {
+    header: "Fall of the Mongol Empire",
+    image: "",
+    attribution: "",
+    description: "Ended with the fall of the Yuan dynasty, the last Khanate.",
+    year: 1368
+  },
+  {
+    header: "Printing Press (invented)",
+    image: "",
+    attribution: "",
+    description: "Invented by Johannes Gutenberg. Allowed printing of works like the bible in local vanaculars.",
+    year: 1440
+  },
+  {
+    header: "Tokugawa Shogunate (start)",
+    image: "",
+    attribution: "",
+    description: "Period of Japanese isolation and feudal rule.",
+    year: 1603
+  },
+  {
+    header: "First Opium War (Start)",
+    image: "",
+    attribution: "",
+    description: "Sino-British war to open up Chinese ports for trade and import of Opium, the only commodity that could penetrate China.",
+    year: 1839
+  },
+  {
+    header: "",
+    image: "",
+    attribution: "",
+    description: "",
+    year: 0
+  },
+  {
+    header: "",
+    image: "",
+    attribution: "",
+    description: "",
+    year: 0
   }
 ];
