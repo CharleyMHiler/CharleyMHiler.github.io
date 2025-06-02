@@ -6,9 +6,10 @@ function updateLives() {
   document.getElementById('lives').textContent = `Lives: ${lives}`;
 }
 
-function createCard(cardData, revealYear = false) {
+function createCard(cardData, revealYear = false, ran = false, correct = false) {
   const card = document.createElement('div');
   card.className = 'card';
+  
 
   card.innerHTML = `
     <div class="header">${cardData.header}</div>
@@ -16,7 +17,7 @@ function createCard(cardData, revealYear = false) {
         <image src="${cardData.image}" alt=${cardData.attribution}>
     </div>
     <div class="description">${cardData.description}</div>
-    <div class="footer">${revealYear ? cardData.year : '????'}</div>
+    <div class="footer " style='background:  ${ran ? (correct ? "green;'" : "red;'") : "eeeeee18;'"} } >${revealYear ? cardData.year : '????'}</div>
   `;
 
   card.dataset.year = cardData.year;
@@ -86,10 +87,20 @@ function showCard() {
   card.style.zIndex = '1000';
 
   const move = (event) => {
+    const windowWidth = window.innerWidth;
+    const zone = windowWidth/15;
+    
     const x = event.clientX;
     const y = event.clientY;
     card.style.left = `${x - card.offsetWidth / 2}px`;
     card.style.top = `${y - card.offsetHeight}px`;
+
+    if(x < zone){
+      window.scrollBy(-10, 0);
+    } else if(x > windowWidth - zone){
+      window.scrollBy(10,0);
+    }
+
     animateTimelineHover(x);
   };
 
@@ -135,15 +146,17 @@ function insertIntoTimeline(cardData, cardEl, guessIndex) {
   const isCorrect = adjustedGuessIndex === indexToInsert;
 
   cardEl.querySelector('.footer').textContent = cardData.year;
-
+  cardEl.querySelector('.footer').style.backgroundColor = 'red';
+ 
   if (!isCorrect) {
     lives--;
     updateLives();
+    
   }
 
   timeline.splice(indexToInsert, 0, cardData);
 
-  const newCardEl = createCard(cardData, true);
+  const newCardEl = createCard(cardData, true, true, isCorrect);
   newCardEl.style.position = 'static';
   const cardNodes = Array.from(wrapper.children);
   if (indexToInsert >= cardNodes.length) {

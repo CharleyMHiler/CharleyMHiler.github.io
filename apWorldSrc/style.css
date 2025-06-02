@@ -88,7 +88,6 @@ body {
 
 .card .footer {
   height: 20%;
-  background: #eeeeee18;
   text-align: center;
   padding-top: 10px;
   font-weight: bold;
@@ -97,6 +96,7 @@ body {
 #lives {
   margin: 10px;
   font-weight: bold;
+  color:azure;
 }
 
 #card-zone {

@@ -134,63 +134,63 @@ const cardsData = [
   },
   {
     header: "American Revolution (start)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg",
     attribution: "",
     description: "One of the global revolutions, based off enlightenment thought.",
     year: 1776,
   },
   {
     header: "French Revolution (start)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/11-french_revolution_1789.jpg",
     attribution: "",
     description: "One of the global revolutions, only one in Europe. Changed their country rather than making a new one.", 
     year:1789
   },
   {
     header: "Latin American Revolutions (start)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Sim%C3%B3n_Bol%C3%ADvar._Toro_Moreno%2C_Luis._1922%2C_Legislative_Palace%2C_La_Paz.png",
     attribution: "",
     description: "Lead by Simon Bolivar, revolutions against Spanish control in Latin America first state.",
     year: 1808
   },
   {
     header: "Touissant Loverture (Birth)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/32/G%C3%A9n%C3%A9ral_Toussaint_Louverture.jpg",
     attribution: "",
     description: "Leader of the Haitain Revolutions, for freedom from slavery and the creation of the Haitian state.",
     year: 1743
   },
   {
     header: "Scientific Revolution (Start)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg",
     attribution: "",
     description: "Conflicting the dogma of the church, the use of scientific reasoning was used to better understand the universe.",
     year: 1543
   },
   {
     header: "Constantinople Falls",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/df/Fall-of-constantinople-22.jpg",
     attribution: "",
     description: "Capital of the Byzantine Empire falls by invasions of the Ottoman Turks.",
     year: 1453
   },
   {
     header: "Fall of Baghdad",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Fall_Of_Baghdad_%28Diez_Albums%29.jpg",
     attribution: "",
     description: "Baghdad, capital of the Abassid Caliphate falls due to Mongol invasion. This is the end of the Abbasid Caliphate. ",
     year: 1258
   },
   {
     header: "Ghengis Khan (death)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Genghis_Khan_Hunts_a_Tiger.jpg",
     attribution: "",
     description: "Unifier and Militarizer of Mongolia, preparing the stepping stones of the great military empire/",
     year: 1228
   },
   {
     header: "Hajj of Mansa Musa",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/46/Catalan_Atlas_BNF_Sheet_6_Mansa_Musa_%28cropped%29.jpg",
     attribution: "",
     description: "Mansa Musa took part on the Hajj, a pillar of Islam, donating a vast quantity of wealth along the way.",
     year: 1324
@@ -204,21 +204,21 @@ const cardsData = [
   },
   {
     header: "Printing Press (invented)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/J._Howe_%26_Co._printing_press%2C_1830.svg",
     attribution: "",
     description: "Invented by Johannes Gutenberg. Allowed printing of works like the bible in local vanaculars.",
     year: 1440
   },
   {
     header: "Tokugawa Shogunate (start)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Shogun-Tokugawa-Ieyasu.png",
     attribution: "",
     description: "Period of Japanese isolation and feudal rule.",
     year: 1603
   },
   {
     header: "First Opium War (Start)",
-    image: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Opium_War_%28cropped%29.jpg",
     attribution: "",
     description: "Sino-British war to open up Chinese ports for trade and import of Opium, the only commodity that could penetrate China.",
     year: 1839
