@@ -23,7 +23,7 @@ function runMenu(reload = false){
 
 function start(){
   document.getElementById("menu").style.visibility="hidden";
-  document.getElementById("menu").style.display="hidden";
+  document.getElementById("menu").style.display="none";
   document.getElementById("game").style.visibility="visible";
   game();
 }
