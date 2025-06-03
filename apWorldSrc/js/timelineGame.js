@@ -7,8 +7,9 @@ let started = false;
 
 runMenu();
 
-function runMenu(){
-  window.location.reload();
+function runMenu(reload = false){
+  if(reload)
+    window.location.reload();
   document.getElementById("game").style.visibility="hidden";
   document.getElementById("menuButton").style.visibility="hidden";
   document.getElementById("menu").style.visibility="visible";
