@@ -1,9 +1,35 @@
 let timeline = [];
 let lives = 3;
+let score = 0;
 let currentCard = null;
+
+let started = false;
+
+runMenu();
+
+function runMenu(){
+  document.getElementById("game").style.visibility="hidden";
+  if(!localStorage.getItem("prevScore")){localStorage.setItem("prevScore", 0);}
+  if(!localStorage.getItem("highScore")){localStorage.setItem("highScore", 0);}
+
+  document.getElementById('prevScore').textContent = `Score: ${localStorage.getItem("prevScore")}`;
+  document.getElementById('highScore').textContent = `Highscore: ${localStorage.getItem("highScore")}`;
+}
+
+function start(){
+  document.getElementById("menu").style.display="none";
+  document.getElementById("game").style.visibility="visible";
+  game();
+}
+
+
+function game(){
 
 function updateLives() {
   document.getElementById('lives').textContent = `Lives: ${lives}`;
+}
+function updateScore(){
+  document.getElementById('score').textContent = `Score: ${score}`;
 }
 
 function createCard(cardData, revealYear = false, ran = false, correct = false) {
@@ -88,7 +114,7 @@ function showCard() {
 
   const move = (event) => {
     const windowWidth = window.innerWidth;
-    const zone = windowWidth/15;
+    const zone = windowWidth/7;
     
     const x = event.clientX;
     const y = event.clientY;
@@ -96,9 +122,9 @@ function showCard() {
     card.style.top = `${y - card.offsetHeight}px`;
 
     if(x < zone){
-      window.scrollBy(-10, 0);
+      window.scrollBy(-15, 0);
     } else if(x > windowWidth - zone){
-      window.scrollBy(10,0);
+      window.scrollBy(15,0);
     }
 
     animateTimelineHover(x);
@@ -152,6 +178,11 @@ function insertIntoTimeline(cardData, cardEl, guessIndex) {
     lives--;
     updateLives();
     
+  } else{
+    score++;
+    localStorage.setItem("prevScore", score)
+    let hs = localStorage.getItem("highScore");
+    localStorage.setItem("highScore", (score > hs ? score : hs));
   }
 
   timeline.splice(indexToInsert, 0, cardData);
@@ -176,7 +207,9 @@ function insertIntoTimeline(cardData, cardEl, guessIndex) {
   cardEl.remove();
   currentCard = null;
   if (lives > 0) showCard();
-  else alert('Game Over!');
+  else {
+    document.getElementById("menuButton").style.visibility="visible";
+  }
 }
 
 function setupTimeline() {
@@ -193,7 +226,8 @@ function setupTimeline() {
 
 updateLives();
 setupTimeline();
-
+updateScore();
+}
 // Make timeline scrollable
 const timelineDiv = document.getElementById('timeline');
 timelineDiv.style.overflowX = 'auto';

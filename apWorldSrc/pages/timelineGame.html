@@ -7,13 +7,24 @@
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+  
+  <div id="menu">
+    <div id="title">AP World History Timeine Game</div>
+    <div id="prevScore">Last Score: 0</div>
+    <div id="highScore">High Score: 0</div>
+    <div id="startButton"><button  onclick="start()">Start Game</button></div>
+  </div>
+
   <div id="game">
     <div id="lives">Lives: 3</div>
+    <div id="score">Score: 0</div>
+    <br> <br>
     <div id="timeline">
       <div id="timeline-wrapper"></div>
     </div>
       
     <div id="card-zone"></div>
+    <div id="menuButton" style="visibility: hidden;"><button onclick="runMenu()">Go to Menu</button></div>
   </div>
   <script src="../js/cards.js"></script>
   <script src="../js/timelineGame.js"></script>

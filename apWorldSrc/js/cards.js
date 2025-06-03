@@ -178,7 +178,7 @@ const cardsData = [
     header: "Fall of Baghdad",
     image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Fall_Of_Baghdad_%28Diez_Albums%29.jpg",
     attribution: "",
-    description: "Baghdad, capital of the Abassid Caliphate falls due to Mongol invasion. This is the end of the Abbasid Caliphate. ",
+    description: "Baghdad, capital of the Abbasid Caliphate falls due to Mongol invasion. This is the end of the Abbasid Caliphate. ",
     year: 1258
   },
   {
@@ -224,17 +224,200 @@ const cardsData = [
     year: 1839
   },
   {
-    header: "",
-    image: "",
-    attribution: "",
-    description: "",
-    year: 0
+    header: "Tupac Amaru ii (death)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Death_of_Tupac_Amaru_II.jpg",
+    attribution: "Pouazity3, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
+    description: "Led a revolution against the Spanish in Peru.",
+    year: 1781
   },
   {
-    header: "",
+    header: "India Colonized",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/07/India_%28British_Raj%29_-_Recuit_Little_Cigas.png",
+    attribution: "Bharata-indstar, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    description: " India officially became a territory of the British Empire. Led by the British Raj.",
+    year: 1858
+  },
+  {
+    header: "Spanish Conquest of Granada",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/31/La_Rendici%C3%B3n_de_Granada_-_Pradilla.jpg",
+    attribution: "Francisco Pradilla y Ortiz, Public domain, via Wikimedia Commons",
+    description: "The Catholic Spanish conquered Granada, taking control of Spain, removing Jews and Muslims.",
+    year: 1492
+  },
+  {
+    header: "Aztec Civilization (starts)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/11/Templo_Mayor_in_Mexico-Tenochtitlan_16th_century_%28illustration_1900%29.jpg",
+    attribution: "Attributed to Diego Rivera, Public domain, via Wikimedia Commons",
+    description: "After centuries of searching on a prophecy, a nomadic people start a new civilization in a lake.",
+    year: 1345
+  },
+  {
+    header: "Incan empire (starts)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Machu_Picchu%2C_Per%C3%BA%2C_2015-07-30%2C_DD_41.JPG",
+    attribution: "Diego Delso, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    description: "Native American civilization high in the Andean Mountain range.",
+    year: 1438
+  },
+  {
+    header: "Aztec Civilization (ends)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/11/Templo_Mayor_in_Mexico-Tenochtitlan_16th_century_%28illustration_1900%29.jpg",
+    attribution: "Attributed to Diego Rivera, Public domain, via Wikimedia Commons",
+    description: "After war, disease and political instability, the Aztec Empire falls.",
+    year: 1528
+  },
+  {
+    header: "Incan empire (ends)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Machu_Picchu%2C_Per%C3%BA%2C_2015-07-30%2C_DD_41.JPG",
+    attribution: "Diego Delso, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    description: "After war, disease and political instability, the Incan Empire falls.",
+    year: 1533
+  },
+  {
+    header: "Sultanate of Delhi established",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/72/Map_of_the_Delhi_Sultanate.png",
+    attribution: "Maps created from DEMIS Mapserver, which are public domain. Koba-chanTerritorial area: पाटलिपुत्र (talk), per Schwartberg Atlas p.148, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons",
+    description: "Islamic Sultanate established and ruled by Turks in the Indian subcontinent.",
+    year: 1206
+  },
+  {
+    header: "Joseon Dynasty (start of rule)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Flag_of_the_king_of_Joseon.svg",
+    attribution: "See page for author, Public domain, via Wikimedia Commons",
+    description: "Last Dynasty of Korea, borrowed ideas like neo-confucianism, bureaucracy and the civil service exam from China.",
+    year: 1392
+  },
+  {
+    header: "Final Crusade",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Combat_deuxi%C3%A8me_croisade.jpg",
+    attribution: "",
+    description: "The Final large scale Crusade for the holy land.",
+    year: 1291
+  },
+  {
+    header: "Fall of Songhay Kingdom",
     image: "",
     attribution: "",
-    description: "",
-    year: 0
+    description: "The Songhay Kingdom in West Africa falls due to Moroccan Invasion.",
+    year: 1591
+  },
+  {
+    header: "Spanish Takeover of Philippines (begins)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/58/Colonial_Coat_of_Arms_of_the_Philippines.jpg",
+    attribution: "Unknown Author, Public domain, via Wikimedia Commons",
+    description: "Conquest of the Indian Ocean group of islands in order to gain access to spice trade, and a destination for American silver.",
+    year: 1565
+  },
+  {
+    header: "Jamestown (Established)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/Jamestown_Virginia_in_1622_Conquestofvirg1939sams_0590.jpg",
+    attribution: "Peter Vander (via Conway Whittle Sams), Public domain, via Wikimedia Commons",
+    description: "In North America, the First English colony is created at Jamestown.",
+    year: 1607
+  },
+  {
+    header: "Golden Horde (Falls)",
+    image: "",
+    attribution: "",
+    description: "The fall of the Golden Horde khanate, leading to the establishment of numerous new states in Eurasia.",
+    year: 1480
+  },
+  {
+    header: "Russian incorporation of Ukraine (begins)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Golden_Horde_Warriors.jpg",
+    attribution: "WSP300, CC0, via Wikimedia Commons",
+    description: "A growing Russian empire incorporates Ukraine.",
+    year: 1648
+  },
+  {
+    header: "Treaty of Nerchinsk",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/%D0%9B%D0%B0%D1%82%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B8_%D0%A2%D0%B5%D0%BA%D1%81%D1%82_%D0%9D%D0%B5%D1%80%D1%87%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80a_%28%D0%B0%D0%B2%D0%BF%D1%80%2C_%D5%93._163%2C_%D0%9E%D0%BF._1%2C_%D0%94._22%2C_%D0%90%D0%BB._6_%D0%9E%D0%B1.%29_-_2.jpg",
+    attribution: "",
+    description: "Resolves border between Chinese and Russian Empires",
+    year: 1689
+  },
+  {
+    header: "Ottoman Conquest of Egypt",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Ottoman_Egypt.png",
+    attribution: "AbdurRahman AbdulMoneim, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    description: "The Ottoman EMpire, expands their territory and conquers Egypt.",
+    year: 1517
+  },
+  {
+    header: "Improved Telescope (Developed)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Galilei%27s_newer_telescope%2C_part_with_lens%2C_Museo_Galileo%2C_Florence%2C_Inv._2427%2C_224092.jpg",
+    attribution: "Zde, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    description: "Galileo develops a new telescope, capable of observing and monitoring the celestial bodies of our solar system much more accurately.",
+    year: 1609
+  },
+  {
+    header: "Thirty Years War (Start)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Thirty_Years_War_3.jpg",
+    attribution: "See page for author, Public domain, via Wikimedia Commons",
+    description: "A large-scale conflict within the Holy-Roman Empire, dividing it into Protestant and Catholic sections.",
+    year: 1618
+  },
+  {
+    header: "Voltaire (Born)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Nicolas_de_Largilli%C3%A8re_-_Portrait_de_Voltaire_%281694-1778%29_en_1718_-_P208_-_Mus%C3%A9e_Carnavalet_-_2.jpg/500px-Nicolas_de_Largilli%C3%A8re_-_Portrait_de_Voltaire_%281694-1778%29_en_1718_-_P208_-_Mus%C3%A9e_Carnavalet_-_2.jpg?20201229230851",
+    attribution: "",
+    description: "French philosopher who frequently criticized slavery and advocated for individual's rights.",
+    year: 1694
+  },
+  {
+    header: "Mirabi (Born)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Kangra_painting_of_Mirabai%2C_the_female_Bhakti_saint.jpg",
+    attribution: "",
+    description: "Very influential poet and writer in the bhakti movement.",
+    year: 1498
+  },
+  {
+    header: "Vasco de Gama reaches India",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Greg%C3%B3rio_Lopes_-_Vasco_da_Gama_%28ca_1524%29.jpg",
+    attribution: "Gregório Lopes, Public domain, via Wikimedia Commons",
+    description: "Vasco de Gama reaches India, searching for routes for the spice trade",
+    year: 1498
+  },
+  {
+    header: "Assault on Mombasa",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Mombasa%2C_Kenya_-_51970582532.jpg",
+    attribution: "Ninara, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons",
+    description: "The Portuguese attack the East African city of Mombasa in order to secure a fort.",
+    year: 1505
+  },
+  {
+    header: "East India Companies (established)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Arms_of_the_Honourable_the_East_India_Company.jpg",
+    attribution: "AnonymousUnknown author, Public domain, via Wikimedia Commons",
+    description: "The British and Dutch East India companies are established as corporations with exclusive rights to spice trade.",
+    year: 1601
+  },
+  {
+    header: "British Slavery Abolished",
+    image: "https://commons.wikimedia.org/wiki/File:Official_medallion_of_the_British_Anti-Slavery_Society_(1795).jpg",
+    attribution: "",
+    description: "After numerous slave revolts, and the idea of wage labor being more effective than slave labor, the British Empire abolished slavery",
+    year: 1861
+  },
+  {
+    header: "Unification of Italy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Brigantaggio_lancieri_montebello_in_capitanata_1861_1863.jpg",
+    attribution: "unknown - sconosciuto, Public domain, via Wikimedia Commons",
+    description: "Italy is unified under nationalistic thought and belief",
+    year: 1870
+  },
+  {
+    header: "Unification of Germany",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Hinterhalt_bei_Hardheim.jpg",
+    attribution: "Anonymer Verfasser, Public domain, via Wikimedia Commons",
+    description: "Germany is unified under nationalistic thought and belief",
+    year: 1871
+  },
+  {
+    header: "19th Amendment (Ratified)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/National_American_Woman_Suffrage_Association.jpg",
+    attribution: "Internet Archive Book Images, No restrictions, via Wikimedia Commons",
+    description: "The 19th Amendment is ratified to the U.S. constitution, allowing women the right to vote. ",
+    year: 1920
   }
+
 ];

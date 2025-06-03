@@ -6,6 +6,55 @@ body {
   overflow-y: hidden;
 }
 
+#menu{
+  text-align: center;
+  top: 60%;
+  left: 50%;
+  color:azure;
+}
+
+#title{
+  font-size: 350%;
+}
+
+button{
+  position: absolute;
+  top:50%;
+  background-color: #3b5974;
+  border-radius: 20px;
+  height: 15%;
+  width: 30%;
+  font-size: 400%;
+  text-align: center;
+  right: 35%;
+  color: azure;
+}
+
+#highScore{
+  margin: 20px;
+  width: 20%;
+  height: 8%;
+  font-size: 250%;
+  border-radius: 25px;
+  left: 50%;
+  background-color: #188029;
+  position: absolute;
+  
+  
+}
+
+#prevScore{
+  margin: 20px;
+  width: 20%;
+  height: 8%;
+  font-size: 250%;
+  border-radius: 25px;
+  background-color: #B0A990;
+  right:50%;
+  position: absolute
+  
+}
+
 #game {
   padding: 20px;
   position: relative;
@@ -94,9 +143,20 @@ body {
 }
 
 #lives {
+  position: fixed;
+  left: 10%;
   margin: 10px;
   font-weight: bold;
   color:azure;
+}
+
+#score{
+  position: fixed;
+  margin: 10px;
+  font-weight: bold;
+  color: azure;
+  text-align: right;
+  right: 10%;
 }
 
 #card-zone {
