@@ -9,6 +9,8 @@ runMenu();
 
 function runMenu(){
   document.getElementById("game").style.visibility="hidden";
+  document.getElementById("menuButton").style.visibility="hidden";
+  document.getElementById("menu").style.visibility="visible";
   if(!localStorage.getItem("prevScore")){localStorage.setItem("prevScore", 0);}
   if(!localStorage.getItem("highScore")){localStorage.setItem("highScore", 0);}
 
@@ -17,7 +19,7 @@ function runMenu(){
 }
 
 function start(){
-  document.getElementById("menu").style.display="none";
+  document.getElementById("menu").style.visibility="hidden";
   document.getElementById("game").style.visibility="visible";
   game();
 }
@@ -180,6 +182,7 @@ function insertIntoTimeline(cardData, cardEl, guessIndex) {
     
   } else{
     score++;
+    updateScore();
     localStorage.setItem("prevScore", score)
     let hs = localStorage.getItem("highScore");
     localStorage.setItem("highScore", (score > hs ? score : hs));

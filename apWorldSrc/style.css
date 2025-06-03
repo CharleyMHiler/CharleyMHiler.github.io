@@ -18,7 +18,7 @@ body {
 }
 
 button{
-  position: absolute;
+  position: fixed;
   top:50%;
   background-color: #3b5974;
   border-radius: 20px;
