@@ -11,7 +11,7 @@ function runMenu(reload = false){
   if(reload)
     window.location.reload();
   document.getElementById("game").style.visibility="hidden";
-  document.getElementById("menu").style.display="none";
+  document.getElementById("menu").style.display="inline";
   document.getElementById("menuButton").style.visibility="hidden";
   document.getElementById("menu").style.visibility="visible";
   if(!localStorage.getItem("prevScore")){localStorage.setItem("prevScore", 0);}
@@ -23,7 +23,7 @@ function runMenu(reload = false){
 
 function start(){
   document.getElementById("menu").style.visibility="hidden";
-  document.getElementById("menu").style.display="inline";
+  document.getElementById("menu").style.display="hidden";
   document.getElementById("game").style.visibility="visible";
   game();
 }
