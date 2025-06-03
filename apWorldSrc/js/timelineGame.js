@@ -8,6 +8,7 @@ let started = false;
 runMenu();
 
 function runMenu(){
+  window.location.reload();
   document.getElementById("game").style.visibility="hidden";
   document.getElementById("menuButton").style.visibility="hidden";
   document.getElementById("menu").style.visibility="visible";
